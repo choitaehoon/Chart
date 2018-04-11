@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,12 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css">
 
 <style>
+<style>
+table {
+	border-collapse: collapse;
+}
+td { padding: 5px; border: solid 1px gray; }
+
 #abc
 {
 	position:absolute;
@@ -14,7 +21,6 @@
 	right:250px;
 }
 </style>
-
 </head>
 <body>
 
@@ -28,11 +34,17 @@
 		<option value="랩">랩</option>
 	</select>
 	
-	<table>
+	<table class="table table-bordered">
+	<tr>
+		<td style="background:gray;">순위</td>
+		<td style="background:gray;">노래제목</td>
+	</tr>
+	<c:forTokens  items="${contents}" var="list" varStatus="lll" delims="," begin="1" end="10">
 		<tr>
-			<td>${contents}</td>
+			<td>${lll.count}</td>
+			<td>${list}</td>
 		</tr>
-	
+	</c:forTokens>
 	</table>
 </div>
 
