@@ -18,10 +18,7 @@ public class Service
 		Document document = Jsoup.connect(listUrl).get();
 		Elements tagList = document.select("p.title");
 		for (Element tag : tagList)
-		{
 			list.add(tag.text());
-			System.out.println(tag.text());
-		}
 		return list;
 	}
 }

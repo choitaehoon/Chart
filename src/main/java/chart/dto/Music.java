@@ -4,6 +4,7 @@ public class Music
 {
 	int id;
 	String musicName;
+	String musicTaste;
 	
 	public int getId() {
 		return id;
@@ -16,6 +17,12 @@ public class Music
 	}
 	public void setMusicName(String musicName) {
 		this.musicName = musicName;
+	}
+	public String getMusicTaste() {
+		return musicTaste;
+	}
+	public void setMusicTaste(String musicTaste) {
+		this.musicTaste = musicTaste;
 	}
 	
 	

@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import chart.dto.Music;
 import chart.dto.User;
+import chart.mapper.MusicMapper;
 import chart.mapper.UserMapper;
 import chart.service.Service;
 
@@ -17,6 +19,8 @@ public class ChartController {
 	
 	@Autowired
 	UserMapper userMapper;
+	@Autowired
+	MusicMapper musicMapper;
 	
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public String home(Model model) {
@@ -36,12 +40,20 @@ public class ChartController {
 		return "membership";
 	}
 	
-	@RequestMapping("signUpAfter")
+	@RequestMapping(value="signUpAfter", method=RequestMethod.GET)
 	public String signUpAfter(User user, Model model) throws IOException
 	{
 		model.addAttribute("user", userMapper.select(user.getUserId()));
 		model.addAttribute("contents",Service.list());
 		return "signUpAfter";
+	}
+	
+	@RequestMapping(value="signUpAfter", method=RequestMethod.POST)
+	public String submit(Music music,User user,Model model)
+	{
+		model.addAttribute("user", userMapper.select(user.getUserId()));
+		musicMapper.insert(music);
+		return "redirect:signUpAfter";
 	}
 	
 }

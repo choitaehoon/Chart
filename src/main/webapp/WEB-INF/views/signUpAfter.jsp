@@ -20,20 +20,38 @@ td { padding: 5px; border: solid 1px gray; }
 	top:130px;
 	right:250px;
 }
+#def
+{
+	position:absolute;
+	top:130px;
+	right:350px;
+}
 </style>
 </head>
 <body>
 
 <div class="container" id="abc">
+<form method="post">
+	<input type="hidden" name="userId" value="${user.userId}">
+	<input type="hidden" name="id" value="${user.id}">
+	
 	<h1>${user.userId}안녕하세요</h1>
-	내가 관심있는 장르: &nbsp;
-	<select name="taste">
+	좋아 하는 음악 :
+	<input type="text" name="musicName"> <br/>
+	음악 장르: &nbsp;
+	<select name="musicTaste">
 		<option value="발라드">발라드</option>
 		<option value="댄스">댄스</option>
 		<option value="헤비 메탈" selected>헤비 메탈</option>
 		<option value="랩">랩</option>
 	</select>
-	
+	<br/>
+	<input type="submit" class="btn btn-primary" value="음악취향선택">
+</form>
+</div>
+
+
+<div id="def">	
 	<table class="table table-bordered">
 	<tr>
 		<td style="background:gray;">순위</td>
@@ -47,7 +65,6 @@ td { padding: 5px; border: solid 1px gray; }
 	</c:forTokens>
 	</table>
 </div>
-
 
 </body>
 </html>
