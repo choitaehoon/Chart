@@ -6,3 +6,4 @@ public interface MusicMapper
 {
 	void insert(Music music);
 }
+

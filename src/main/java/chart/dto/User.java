@@ -4,7 +4,6 @@ public class User
 {
 	int id;
 	String name;
-	String taste;
 	String userId;
 	String password;
 	
@@ -20,12 +19,6 @@ public class User
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getTaste() {
-		return taste;
-	}
-	public void setTaste(String taste) {
-		this.taste = taste;
-	}
 	public String getUserId() {
 		return userId;
 	}
@@ -38,6 +31,4 @@ public class User
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
 }

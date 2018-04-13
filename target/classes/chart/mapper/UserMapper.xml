@@ -6,8 +6,8 @@
 <mapper namespace="chart.mapper.UserMapper">
 
 	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
-	insert User(userId, name, taste, password)
-	values(#{userId}, #{name}, #{taste}, #{password})
+	insert User(userId, name, password)
+	values(#{userId}, #{name}, #{password})
 	</insert>
 	
 	<select id="select" resultType="chart.dto.User">

@@ -31,8 +31,7 @@ td { padding: 5px; border: solid 1px gray; }
 <body>
 
 <div class="container" id="abc">
-<form method="post">
-	<input type="hidden" name="userId" value="${user.userId}">
+<form action="sign" method="post">
 	<input type="hidden" name="id" value="${user.id}">
 	
 	<h1>${user.userId}안녕하세요</h1>
@@ -50,6 +49,11 @@ td { padding: 5px; border: solid 1px gray; }
 </form>
 </div>
 
+<div>
+<form action="login">
+	<input type="button" value="로그아웃">
+</form>
+</div>
 
 <div id="def">	
 	<table class="table table-bordered">

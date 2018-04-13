@@ -14,13 +14,13 @@
 		아이디: <input type="text" name="userId"><br/>
 		비번: <input type="password" name="password"><br/>
 		이름: <input type="text" name="name"><br/>
-		취향:
-		 <select name="taste">
-			<option value="발라드">발라드</option>
-			<option value="댄스">댄스</option>
-			<option value="헤비 메탈">헤비 메탈</option>
-			<option value="랩">랩</option>
-		</select><br/>
+<!-- 		취향: -->
+<!-- 		 <select name="taste"> -->
+<!-- 			<option value="발라드">발라드</option> -->
+<!-- 			<option value="댄스">댄스</option> -->
+<!-- 			<option value="헤비 메탈">헤비 메탈</option> -->
+<!-- 			<option value="랩">랩</option> -->
+<!-- 		</select><br/> -->
 		<input type="submit" class="btn btn-primary" value="가입하기">
 	</form>	
 	</div>

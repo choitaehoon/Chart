@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Chart1
+Bundle-SymbolicName: Chart1
+Bundle-Version: 1.0.0.qualifier
+Export-Package: chart.controller,
+ chart.dto,
+ chart.mapper,
+ chart.service

@@ -2,11 +2,14 @@ package chart.controller;
 
 import java.io.IOException;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import chart.dto.Music;
 import chart.dto.User;
@@ -15,6 +18,7 @@ import chart.mapper.UserMapper;
 import chart.service.Service;
 
 @Controller
+@SessionAttributes("user")
 public class ChartController {
 	
 	@Autowired
@@ -40,18 +44,17 @@ public class ChartController {
 		return "membership";
 	}
 	
-	@RequestMapping(value="signUpAfter", method=RequestMethod.GET)
-	public String signUpAfter(User user, Model model) throws IOException
+	@RequestMapping(value="signUpAfter", method= {RequestMethod.POST,RequestMethod.GET})
+	public String signUpAfter(HttpSession session,User user, Model model) throws IOException
 	{
 		model.addAttribute("user", userMapper.select(user.getUserId()));
 		model.addAttribute("contents",Service.list());
 		return "signUpAfter";
 	}
 	
-	@RequestMapping(value="signUpAfter", method=RequestMethod.POST)
-	public String submit(Music music,User user,Model model)
+	@RequestMapping(value="sign", method=RequestMethod.POST)
+	public String submit(Music music,Model model)
 	{
-		model.addAttribute("user", userMapper.select(user.getUserId()));
 		musicMapper.insert(music);
 		return "redirect:signUpAfter";
 	}
