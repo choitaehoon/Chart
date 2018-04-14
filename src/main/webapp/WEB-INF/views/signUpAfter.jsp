@@ -46,12 +46,8 @@ td { padding: 5px; border: solid 1px gray; }
 	</select>
 	<br/>
 	<input type="submit" class="btn btn-primary" value="음악취향선택">
-</form>
-</div>
-
-<div>
-<form action="login">
-	<input type="button" value="로그아웃">
+	<input type="button" class="btn btn-primary" value="음악적취향비슷한사람 검색"
+	onclick="location.href='musicTaste'">
 </form>
 </div>
 

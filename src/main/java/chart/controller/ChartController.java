@@ -59,4 +59,10 @@ public class ChartController {
 		return "redirect:signUpAfter";
 	}
 	
+	@RequestMapping("musicTaste")
+	public String musicTaste(Model model)
+	{
+		model.addAttribute("music", musicMapper.selectTaste());
+		return "musicTaste";
+	}
 }

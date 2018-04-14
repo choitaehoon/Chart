@@ -23,7 +23,5 @@ public class Music
 	}
 	public void setMusicTaste(String musicTaste) {
 		this.musicTaste = musicTaste;
-	}
-	
-	
+	}	
 }

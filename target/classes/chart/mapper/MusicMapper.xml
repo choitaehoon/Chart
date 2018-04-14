@@ -9,4 +9,9 @@
 		insert Music(id,musicName, musicTaste)
 		values(#{id},#{musicName}, #{musicTaste})
 	</insert>
+	
+	<select id="selectTaste" resultType="chart.dto.Music">
+		select u.name, m.musicTaste from user u inner join music m
+		on u.id = m.id
+	</select>
 </mapper>
